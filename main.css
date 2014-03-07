@@ -1,3 +1,11 @@
 .no-display {
 	display:none;
 }
+
+.button-centered {
+    margin-top: 40%;
+}
+
+.addActivity-button {
+	margin-top: 5%;
+}
