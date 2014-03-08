@@ -41,7 +41,22 @@
                     </div>
                     <div class="row">
                         <div id="agenda-column">
-                            <p>Column for added activities</p>
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1"><div class="activity-time">08:00</div></div>
+                                <div class="col-md-8"><div class="activity-presentation">Introduction</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1"><div class="activity-time">09:00</div></div>
+                                <div class="col-md-8"><div class="activity-discussion">Talking and stuff</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1"><div class="activity-time">10:00</div></div>
+                                <div class="col-md-8"><div class="activity-groupwork">Iprog lab</div></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1"><div class="activity-time">11:00</div></div>
+                                <div class="col-md-8"><div class="activity-break">Fika</div></div>
+                            </div>
                         </div>
                     </div> 
                 </div> 
@@ -56,11 +71,29 @@
                  </div>                
              </div> 
          </div><!-- End of addDayView --> 
+         <!-- formView -->
+         <div id = "formView" class = "no-display form-container">
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="formInputName" placeholder="Name">
+                <input type="text" class="form-control" id="formInputLength" placeholder="Length (min)">
+                <div class="form-group">
+                    <label for="formInputType">Type</label>
+                    <!-- This select will be populated -->
+                    <select class="form-control" id="formInputType"></select>
+                </div>
+                <textarea class="form-control" rows="5" placeholder="Description" id="formInputDesc"></textarea>
+                <button class="btn btn-danger" id="formSubmitCancel">Cancel</button>
+                <button class="btn btn-success" id="formSubmitSave">Save</button>
 
-     </div> <!-- End of row-->
- </div>
+
+
+            </div> 
+        </div> <!-- End of formView-->
+    </div> <!-- End of row-->
+</div>
 </body>
 
+<!-- Document imports -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
@@ -73,5 +106,6 @@
 <script src="js/controller/addDayViewController.js"></script>
 <script src="js/view/addActivitiesView.js"></script>
 <script src="js/controller/addActivitiesViewController.js"></script>
-  </body>
+<script src="js/view/formView.js"></script>
+<script src="js/controller/formViewController.js"></script>
 </html>

@@ -10,6 +10,9 @@ $(function() {
 	var agendaViewController = new AgendaViewController(agendaView, model);
 	agendaViews.push(agendaView);
 
+	var formView = new FormView($("#formView"), model);
+	var formViewController = new FormViewController(formView, model);
+
 	var addDayView = new AddDayView($("#addDayView"), model, dayNo);
 	var addDayViewController = new AddDayViewController(addDayView, model);
 
