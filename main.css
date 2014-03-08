@@ -3,7 +3,7 @@
 }
 
 .button-centered {
-    margin-top: 40%;
+	margin-top: 40%;
 }
 
 .column-1 {
@@ -15,12 +15,14 @@
 }
 
 .activity-column {
+	padding: 10px;
 	margin-top: 2%;
 	height: 838px;
 	border: dashed 3px;
 }
 
 #agenda-column {
+	padding: 10px;
 	margin-top: 2%;
 	height: 800px;
 	border: dashed 3px;
@@ -38,4 +40,32 @@
 	margin-top: 5%;
 	height: 90px;
 	background: blue;
+}
+
+.activity-time {
+	padding-top: 4px;
+}
+
+.activity-presentation {
+	border: 2px solid blue;
+	padding: 4px;
+	background: lightblue;
+}
+
+.activity-discussion {
+	border: 2px solid green;
+	padding: 4px;
+	background: lightgreen;
+}
+
+.activity-groupwork {
+	border: 2px solid red;
+	padding: 4px;
+	background: orange;
+}
+
+.activity-break {
+	border: 2px solid orange;
+	padding: 4px;
+	background: yellow;
 }
