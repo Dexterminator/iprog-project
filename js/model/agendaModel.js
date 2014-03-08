@@ -138,6 +138,11 @@ function Day(startH,startM) {
 		var activity = this._removeActivity(oldposition);
 		this._addActivity(activity, newposition);
 	};
+
+	//returns all the activities for the daty
+	this._getActivities = function(){
+		return this._activities;
+	}
 }
 
 
@@ -182,6 +187,16 @@ function Model(){
 		this.notifyObservers();
 		return act;
 	};
+
+	//returns the parked activities
+	this.getParkedActivities = function() {
+		return this.parkedActivities;
+	};
+
+	//returns the activities of a day
+	this.getActivitiesOfADay = function(day){
+		return this.days[day];
+	}
 	
 	// moves activity between the days, or day and parked activities.
 	// to park activity you need to set the new day to null
@@ -234,7 +249,10 @@ function createTestData(){
 	model.addActivity(new Activity("Working in groups",35,1,""),0);
 	model.addActivity(new Activity("Idea 1 discussion",15,2,""),0);
 	model.addActivity(new Activity("Coffee break",20,3,""),0);
-	
+
+	model.addParkedActivity(new Activity("Test",10,0,""),0);
+	model.addParkedActivity(new Activity("Test2",20,2,""),0);
+
 	console.log("Day Start: " + model.days[0].getStart());
 	console.log("Day End: " + model.days[0].getEnd());
 	console.log("Day Length: " + model.days[0].getTotalLength() + " min");
