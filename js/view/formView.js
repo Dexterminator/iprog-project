@@ -1,13 +1,23 @@
 // formView object constructor
 var FormView = function (container, model){
-	var formInputName = container.find("formInputName");
-	var formInputLength = container.find("formInputLength");
-	var formInputType = container.find("formInputType");
-	var formInputDesc = container.find("formInputDesc");
-	var formSubmitCancel = container.find("formSubmitCancel");
-	var formSubmitSave = container.find("formSubmitSave");
 	//Load objects from view
-	//No need for observer pattern
+	this.formInputName = container.find("#formInputName");
+	this.formInputLength = container.find("#formInputLength");
+	this.formInputType = container.find("#formInputType");
+	this.formInputDesc = container.find("#formInputDesc");
+	this.formSubmitCancel = container.find("#formSubmitCancel");
+	this.formSubmitSave = container.find("#formSubmitSave");
+
+
+	//Populate select field
+	types = model.getAllTypes();
+	console.log(types);
+	for(var i = 0; i<types.length; i++){
+		var opt = $("<option>");
+		opt.attr("value", types[i]);
+		opt.html(types[i]);
+		this.formInputType.append(opt);
+	}
 
 	this.makeHidden = function(){
 		container.fadeOut(0, function() {
@@ -20,4 +30,8 @@ var FormView = function (container, model){
 			//Animation complete
 		});
 	}
+
+
+	//No need for observer pattern
+
 }

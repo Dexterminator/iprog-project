@@ -3,6 +3,7 @@
 // The possible activity types
 var ActivityType = ["Presentation","Group Work","Discussion","Break"]
 
+
 // This is an activity constructor
 // When you want to create a new activity you just call
 // var act = new Activity("some activity",20,1,"Some description);
@@ -151,6 +152,11 @@ function Model(){
 	this.days = [];
 	this.parkedActivities = [];
 	
+
+	// This method returns all of the types available
+	this.getAllTypes = function() {
+		return ActivityType;
+	}
 	// adds a new day. if startH and startM (start hours and minutes)
 	// are not provided it will set the default start of the day to 08:00
 	this.addDay = function (startH,startM) {
@@ -225,13 +231,13 @@ function Model(){
 	var listeners = [];
 	
 	this.notifyObservers = function (args) {
-	    for (var i = 0; i < listeners.length; i++){
-	        listeners[i].update(args);
-	    }
+		    for (var i = 0; i < listeners.length; i++){
+			        listeners[i].update(args);
+		    }
 	};
 	
 	this.addObserver = function (listener) {
-	    listeners.push(listener);
+		    listeners.push(listener);
 	};
 	//*** END OBSERVABLE PATTERN ***
 }
