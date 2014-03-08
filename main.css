@@ -6,6 +6,32 @@
     margin-top: 40%;
 }
 
+.column-1 {
+	margin-right: 7px;
+}
+
 .addActivity-button {
 	margin-top: 5%;
+}
+
+.activity-column {
+	margin-top: 2%;
+	height: 838px;
+	border: dashed 3px;
+}
+
+.agenda-column {
+	margin-top: 2%;
+	height: 800px;
+	border: dashed 3px;
+}
+
+.agenda-header {
+	margin-top: 5%;
+}
+
+.ratio-box {
+	margin-top: 5%;
+	height: 90px;
+	background: blue;
 }
