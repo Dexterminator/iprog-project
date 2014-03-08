@@ -14,44 +14,51 @@
     <div class="container">
         <div class="row">
 
-            <!-- First column -->
-            <div class="col-md-3 column-1">
-                <div class="row">
-                    <button type="submit" id="addActivityButton" class="addActivity-button btn btn-primary btn-lg btn-block">+ Add activity!</button>
-                </div>  
-                <div class="row">
-                    <div class="activity-column">
-                        <p>Column for activities</p>
-                    </div>
-                </div>
-            </div> <!-- End of first column -->
-
-            <!-- Second column -->
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="agenda-header"><h4>Start time: <span id="start-time">08:00</span></h4></div>
-                        <div><h4>End time: <span id="end-time">08:10</span></h4></div>
-                        <div><h4>Total length: <span id="total-time">10 min</span></h4></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ratio-box bg-primary"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="agenda-column">
-                        <p>Column for added activities</p>
+            <!-- addActivitiesView -->
+            <div id="addActivitiesView">
+                <div class="col-md-3 column-1">
+                    <div class="row">
+                        <button type="submit" id="addActivityButton" class="addActivity-button btn btn-primary btn-lg btn-block">+ Add activity!</button>
+                    </div>  
+                    <div class="row">
+                        <div class="activity-column">
+                            <p>Column for activities</p>
+                        </div>
                     </div>
                 </div> 
-            </div> <!-- End of second column -->
+            </div><!-- End of addActivitiesView -->
 
-            <!-- Third column -->
-            <div class="col-md-3">
-                <div class="button-container button-centered">
-                 <button type="submit" id="addDayButton" class="btn btn-primary btn-lg btn-block">+ Add a day!
-                 </button>
-             </div>                
-         </div> <!-- End of third column --> 
+            <!-- agendaView -->
+            <div id="agendaView">
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="agenda-header"><h4>Start time: <span id="start-time">08:00</span></h4></div>
+                            <div><h4>End time: <span id="end-time">08:10</span></h4></div>
+                            <div><h4>Total length: <span id="total-time">10 min</span></h4></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="ratio-box bg-primary"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="agenda-column">
+                            <p>Column for added activities</p>
+                        </div>
+                    </div> 
+                </div> 
+            </div><!-- End of agendaView -->
+
+            <!-- addDayView -->
+            <div id="addDayView">
+                <div class="col-md-3">
+                    <div class="button-container button-centered">
+                     <button type="submit" id="addDayButton" class="btn btn-primary btn-lg btn-block">+ Add a day!
+                     </button>
+                 </div>                
+             </div> 
+         </div><!-- End of addDayView --> 
+         
      </div> <!-- End of row-->
  </div>
 </body>
