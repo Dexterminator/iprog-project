@@ -20,7 +20,7 @@ var AddActivitiesView = function (container,model) {
 	}
 
 	this.makeVisible = function(){
-		container.fadeIn(1000, function() {
+		container.fadeIn(100, function() {
 			//Animation complete
 		});
 	}
