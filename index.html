@@ -18,12 +18,10 @@
             <div id="addActivitiesView">
                 <div class="col-md-3 column-1">
                     <div class="row">
-                        <button type="submit" id="addActivityButton" class="addActivity-button btn btn-primary btn-lg btn-block">+ Add activity!</button>
+                        <button id="addActivityButton" class="addActivity-button btn btn-primary btn-lg btn-block">+ Add activity!</button>
                     </div>  
-                    <div class="row">
-                        <div class="activity-column">
-                            <p>Column for activities</p>
-                        </div>
+                    <div id="addActivitiesContainer" class="row">
+                        <!-- DYNAMIC CONTENT GOES HERE -->
                     </div>
                 </div> 
             </div><!-- End of addActivitiesView -->
@@ -73,5 +71,7 @@
 <script src="js/controller/agendaViewController.js"></script>
 <script src="js/view/addDayView.js"></script>
 <script src="js/controller/addDayViewController.js"></script>
+<script src="js/view/addActivitiesView.js"></script>
+<script src="js/controller/addActivitiesViewController.js"></script>
   </body>
 </html>

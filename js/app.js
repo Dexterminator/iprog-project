@@ -13,6 +13,9 @@ $(function() {
 	var addDayView = new AddDayView($("#addDayView"), model, dayNo);
 	var addDayViewController = new AddDayViewController(addDayView, model);
 
+	var addActivitiesView = new AddActivitiesView($("#addActivitiesView"), model);
+	var addActivitiesViewController = new AddActivitiesViewController(addActivitiesView, model);
+
 	window.addDay = function(){
 		var agendaView = new AgendaView($("#agendaView"), model, dayNo);
 		var agendaViewController = new AgendaViewController(agendaView, model);
