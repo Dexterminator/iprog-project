@@ -36,4 +36,3 @@ var AgendaView = function (container,model,dayNo) {
 		});
 	}
 }
- 
