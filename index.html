@@ -35,14 +35,14 @@
                         <div class="col-md-8">
                             <div class="agenda-header"><h4>Start time: <span id="start-time">08:00</span></h4></div>
                             <div><h4>End time: <span id="end-time">08:10</span></h4></div>
-                            <div><h4>Total length: <span id="total-time">10 min</span></h4></div>
+                            <div><h4>Total length: <span id="total-length"></span></h4></div>
                         </div>
                         <div class="col-md-4">
                             <div class="ratio-box bg-primary"></div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="agenda-column">
+                        <div id="agenda-column">
                             <p>Column for added activities</p>
                         </div>
                     </div> 
@@ -65,10 +65,11 @@
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script type='text/javascript' src='script.js'></script>
 <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/model/agendaModel.js"></script>
+<script src="js/view/agendaView.js"></script>
+<script src="js/controller/agendaViewController.js"></script>
   </body>
 </html>

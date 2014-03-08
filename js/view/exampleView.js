@@ -1,5 +1,5 @@
 //ExampleView Object constructor
-var ExampleView = function (container,model) {
+var ExampleView = function (container,model,dayNo) {
 	
 	/*****************************************  
 	      Observer implementation    
