@@ -1,7 +1,7 @@
 var AddActivitiesView = function (container,model) {
 	this.addActivityButton = container.find("#addActivityButton");
 	this.addActivitiesColumn = container.find("#addActivitiesColumn");
-
+	var actRow;
 	// This section should populate the activities column dynamically.
 	// var colText = $("<p>").html("Column for activities");
 	// this.addActivitiesColumn.append(colText);
@@ -39,6 +39,10 @@ var AddActivitiesView = function (container,model) {
 
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
+		if (this.addActivitiesColumn != null) {
+			this.addActivitiesColumn.html("");
+		}
+		
 		this.generateParkedActivitiesHTML();
 	}
 
