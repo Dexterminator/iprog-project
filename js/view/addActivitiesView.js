@@ -8,8 +8,38 @@ var AddActivitiesView = function (container,model) {
 
 	model.addObserver(this);
 
+	// Generates HTML for the activities that are listed in the parked activities column
+	this.generateParkedActivitiesHTML = function () {
+		parkedActivities = model.getParkedActivities();
+
+		for(var i = 0; i < parkedActivities.length; i++) {
+			var actName = parkedActivities[i].getName();
+			var actType = parkedActivities[i].getTypeId();
+			var actLength = parkedActivities[i].getLength();
+
+			if (actType == "Presentation") {
+				actType = "activity-presentation";
+			} else if (actType == "Group Work") {
+				actType = "activity-groupwork"
+			} else if (actType == "Discussion") {
+				actType = "activity-discussion";
+			} else if (actType == "Break") {
+				actType = "activity-break";
+			}
+
+			actRow = $("<div>").addClass("row");
+			actCol = $("<div>").addClass("col-md-8");
+			act = $("<div>").addClass(actType).html(actName + " (" + actLength + " min)");
+
+			actCol.append(act);
+			actRow.append(actCol);
+			this.addActivitiesColumn.append(actRow);
+		}
+	}
+
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
+		this.generateParkedActivitiesHTML();
 	}
 
 	this.makeHidden = function(){
