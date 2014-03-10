@@ -2,6 +2,7 @@ ul{
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
+	height: 100%;
 }
 
 li{
@@ -29,6 +30,7 @@ li{
 	margin-top: 2%;
 	height: 838px;
 	border: dashed 3px grey;
+	border-radius: 20px;
 }
 
 #agenda-column {
@@ -36,6 +38,7 @@ li{
 	margin-top: 2%;
 	height: 773px;
 	border: dashed 3px grey;
+	border-radius: 20px;
 }
 
 .agenda-header {
