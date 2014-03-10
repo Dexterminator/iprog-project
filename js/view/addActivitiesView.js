@@ -2,10 +2,6 @@ var AddActivitiesView = function (container,model) {
 	this.addActivityButton = container.find("#addActivityButton");
 	this.addActivitiesColumn = container.find("#addActivitiesColumn");
 	this.parkedActivitiesList = container.find("#parkedActivitiesList");
-	var actRow;
-	// This section should populate the activities column dynamically.
-	// var colText = $("<p>").html("Column for activities");
-	// this.addActivitiesColumn.append(colText);
 
 	model.addObserver(this);
 
@@ -28,16 +24,21 @@ var AddActivitiesView = function (container,model) {
 				actType = "activity-break";
 			}
 
+	        var li = $("<li>");
 			actRow = $("<div>").addClass("row");
-			actCol = $("<div>").addClass("col-md-8");
-			act = $("<div>").addClass(actType).html(actName + " (" + actLength + " min)");
+			actLenCol = $("<div>").addClass("col-md-4");
+			actLenDisplay = $("<div>").html(actLength + " (min)");
 
-			actCol.append(act);
-			actRow.append(actCol);
-			var li = $("<li>");
+			actTypeCol = $("<div>").addClass("col-md-8");
+			actDisplay = $("<div>").addClass(actType).html(actName);
+
+			actLenCol.append(actLenDisplay);
+			actTypeCol.append(actDisplay);
+			actRow.append(actLenCol);
+			actRow.append(actTypeCol);
+			
 			li.html(actRow);
 			this.parkedActivitiesList.append(li);
-			// this.addActivitiesColumn.append(actRow);
 		}
 	}
 
