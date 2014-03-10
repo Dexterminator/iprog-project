@@ -140,7 +140,7 @@ function Day(startH,startM) {
 		this._addActivity(activity, newposition);
 	};
 
-	//returns all the activities for the daty
+	//returns all the activities for the day
 	this._getActivities = function(){
 		return this._activities;
 	}
@@ -201,7 +201,7 @@ function Model(){
 
 	//returns the activities of a day
 	this.getActivitiesOfADay = function(day){
-		return this.days[day];
+		return this.days[day]._getActivities();
 	}
 	
 	// moves activity between the days, or day and parked activities.
@@ -251,13 +251,15 @@ function Model(){
 function createTestData(model){
 	model.addDay();
 	model.addActivity(new Activity("Introduction",10,"Presentation",""),0);
-	model.addActivity(new Activity("Idea 1",30,0,""),0);
-	model.addActivity(new Activity("Working in groups",35,1,""),0);
-	model.addActivity(new Activity("Idea 1 discussion",15,2,""),0);
-	model.addActivity(new Activity("Coffee break",20,3,""),0);
+	model.addActivity(new Activity("Idea 1",30,"Presentation",""),0);
+	model.addActivity(new Activity("Working in groups",35,"Group Work",""),0);
+	model.addActivity(new Activity("Idea 1 discussion",15,"Discussion",""),0);
+	model.addActivity(new Activity("Coffee break",20,"Break",""),0);
 
-	model.addParkedActivity(new Activity("Test",10,"Presentation",""),0);
-	model.addParkedActivity(new Activity("Test2",20,"Discussion",""),0);
+	model.addParkedActivity(new Activity("Presentation",10,"Presentation",""),0);
+	model.addParkedActivity(new Activity("Discussion",20,"Discussion",""),0);
+	model.addParkedActivity(new Activity("Group Work",8,"Group Work",""),0);
+	model.addParkedActivity(new Activity("Break",13,"Break",""),0);
 
 	console.log("Day Start: " + model.days[0].getStart());
 	console.log("Day End: " + model.days[0].getEnd());
