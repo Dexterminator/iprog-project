@@ -37,9 +37,10 @@ var AddActivitiesView = function (container,model) {
 			var li = $("<li>");
 			li.html(actRow);
 			this.parkedActivitiesList.append(li);
-			// this.addActivitiesColumn.append(actRow);
 		}
 	}
+
+	this.generateParkedActivitiesHTML();
 
 	//This function gets called when there is a change at the model
 	this.update = function(arg){

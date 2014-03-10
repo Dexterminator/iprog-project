@@ -4,6 +4,10 @@ ul{
 	padding: 0px;
 }
 
+li{
+	cursor: move;
+}
+
 .no-display {
 	display:none;
 }
@@ -75,7 +79,21 @@ ul{
 	padding: 4px;
 	background: yellow;
 }
+.activity-presentation:hover {
+	color: white;
+}
 
+.activity-discussion:hover {
+	color: white;
+}
+
+.activity-groupwork:hover {
+	color:white;
+}
+
+.activity-break:hover {
+	color:white;
+}
 #start-time {
 	width: 50%;
 }
