@@ -42,6 +42,8 @@ var AddActivitiesView = function (container,model) {
 		}
 	}
 
+	this.generateParkedActivitiesHTML();
+
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
 		if (this.parkedActivitiesList != null) {
