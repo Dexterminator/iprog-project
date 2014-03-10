@@ -3,13 +3,14 @@ var AgendaView = function (container,model,dayNo) {
 	this.startTime = container.find('#start-time');
 	this.endTime = container.find('#end-time');
 	this.totalLength = container.find('#total-length');
+	this.list = container.find('#sortable');
 
 	this.agendaColumn = container.find("#agenda-column");
+
 
 	this.startTime.html(model.days[dayNo].getStart());
 	this.endTime.html(model.days[dayNo].getEnd());
 	this.totalLength.html(model.days[dayNo].getTotalLength());
-
 
 	//Register an observer to the model
 	model.addObserver(this);

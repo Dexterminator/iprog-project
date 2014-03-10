@@ -6,6 +6,7 @@ var FormViewController = function (view, model){
 		view.formInputLength.val("");
 		view.formInputDesc.val("");
 		model.addParkedActivity(act);
+
 		window.showAgendas();
 	});
 
