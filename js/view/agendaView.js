@@ -3,7 +3,7 @@ var AgendaView = function (container,model,dayNo) {
 	this.startTime = container.find('#start-time');
 	this.endTime = container.find('#end-time');
 	this.totalLength = container.find('#total-length');
-	this.list = container.find('#sortable');
+	this.agendaList = container.find('#agendaList');
 
 	this.agendaColumn = container.find("#agenda-column");
 

@@ -250,7 +250,7 @@ function Model(){
 // you can use this method to create some test data and test your implementation
 function createTestData(model){
 	model.addDay();
-	model.addActivity(new Activity("Introduction",10,0,""),0);
+	model.addActivity(new Activity("Introduction",10,"Presentation",""),0);
 	model.addActivity(new Activity("Idea 1",30,0,""),0);
 	model.addActivity(new Activity("Working in groups",35,1,""),0);
 	model.addActivity(new Activity("Idea 1 discussion",15,2,""),0);
