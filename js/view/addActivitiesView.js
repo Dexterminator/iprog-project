@@ -27,7 +27,7 @@ var AddActivitiesView = function (container,model) {
 	        var li = $("<li>");
 			actRow = $("<div>").addClass("row");
 			actLenCol = $("<div>").addClass("col-md-4");
-			actLenDisplay = $("<div>").html(actLength + " (min)");
+			actLenDisplay = $("<div>").addClass("activity-time").html(actLength + " min");
 
 			actTypeCol = $("<div>").addClass("col-md-8");
 			actDisplay = $("<div>").addClass(actType).html(actName);
