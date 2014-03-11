@@ -38,6 +38,7 @@ var AddActivitiesView = function (container,model) {
 			actRow.append(actTypeCol);
 			
 			li.html(actRow);
+			li.attr('id', 'null' + "-" + i);
 			this.parkedActivitiesList.append(li);
 		}
 	}

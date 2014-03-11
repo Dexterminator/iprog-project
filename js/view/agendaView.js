@@ -64,6 +64,7 @@ var AgendaView = function (container,model,dayNo) {
 			actRow.append(actNameCol);
 			var li = $("<li>");
 			li.html(actRow);
+			li.attr('id', dayNo + "-" + i);
 			this.agendaList.append(li);
 
 			currStartMin += actLength;
@@ -80,6 +81,7 @@ var AgendaView = function (container,model,dayNo) {
 		this.totalLength.html(model.days[dayNo].getTotalLength());
 
 		//TODO: update the agenda column as well.
+		this.agendaList.html("");
 		this.generateActivities();
 
 	}
