@@ -17,12 +17,24 @@ li{
 	display:none;
 }
 
+.top-bar {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	text-align: center;
+	color: lightgrey;
+	background-color: #6B526A;
+}
+
 .button-centered {
 	margin-top: 40%;
 }
 
 .column-1 {
 	margin-right: 7px;
+}
+
+.column-1-margin {
+	margin-left: 2%;
 }
 
 .addActivity-button {
@@ -69,24 +81,28 @@ li{
 	border: 2px solid blue;
 	padding: 5px;
 	background: lightblue;
+	border-radius: 5px;
 }
 
 .activity-discussion {
 	border: 2px solid green;
 	padding: 4px;
 	background: lightgreen;
+	border-radius: 5px;
 }
 
 .activity-groupwork {
 	border: 2px solid red;
 	padding: 4px;
 	background: orange;
+	border-radius: 5px;
 }
 
 .activity-break {
 	border: 2px solid orange;
 	padding: 4px;
 	background: yellow;
+	border-radius: 5px;
 }
 .activity-presentation:hover {
 	color: white;
