@@ -6,7 +6,7 @@ var AgendaView = function (container,model,dayNo) {
 	this.totalLength = container.find('#total-length');
 	this.agendaList = container.find('#agendaList');
 
-	console.log(dayNo);
+	this.agendaList.html("");
 
 	this.agendaColumn = container.find("#agenda-column");
 
@@ -33,7 +33,6 @@ var AgendaView = function (container,model,dayNo) {
 
 	this.generateActivities = function(){
 		activities = model.getActivitiesOfADay(dayNo);
-
 
 		var currStart = model.days[dayNo].getStart();
 		var currStartMin = model.days[dayNo].getMinStart();

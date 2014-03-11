@@ -24,18 +24,17 @@ $(function() {
 	window.addDay = function(){
 		dayNo++;
 		model.addDay();
+		
+		var newAgendaView = document.getElementById("agendaView").cloneNode(true);
 		newAgendaView.id = "agendaView" + dayNo;
-		before = document.getElementById("addDayView");
-		container = document.getElementById("containerRow");
+		var before = document.getElementById("addDayView");
+		var container = document.getElementById("containerRow");
 		container.insertBefore(newAgendaView,before);
 
 		var agendaView = new AgendaView($("#agendaView" + dayNo), model, dayNo);
-		var agendaViewController = new AgendaViewController(agendaView, model);
+		var agendaViewController = new AgendaViewController(agendaView, model, dayNo);
 		agendaViews.push(agendaView);
 		//Test if the day was added by alerting end time of each day
-		for (index = 0; index < agendaViews.length; ++index) {
-			alert(agendaViews[index].endTime.html());
-		}
 	}
 
 	window.showForm = function(){

@@ -39,7 +39,6 @@ var AgendaViewController = function (view, model, dayNo) {
 						newPosition = newSplitted[1];
 					}
 					model.moveActivity(splitted[0], splitted[1], newDay, newPosition);
-					console.log("Moved in list");
 				}
   			}
   		}
@@ -61,7 +60,8 @@ var AgendaViewController = function (view, model, dayNo) {
 			var listItem = document.getElementById(ui.item.attr('id'));
 			var newDay;
 			var newPosition;
-			if(listItem.nextSibling == null && listItem.previousSibling == null){
+
+			if((listItem.nextSibling == null && listItem.previousSibling == null) || model.getActivitiesOfADay(view.dayNo).length == 0){
 				newDay = view.dayNo;
 				newPosition = 0;
 			}else if(listItem.nextSibling == null){
@@ -75,7 +75,6 @@ var AgendaViewController = function (view, model, dayNo) {
 			}
 
 			model.moveActivity(dayNo, position, newDay, newPosition);
-			console.log("Moved between days");
 		}
 	}).disableSelection();
 }
