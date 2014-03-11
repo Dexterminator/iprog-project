@@ -211,7 +211,6 @@ function Model(){
 	// remove an activity on provided position from parked activites 
 	this.removeParkedActivity = function(position) {
 		act = this.parkedActivities.splice(position,1)[0];
-		this.notifyObservers();
 		return act;
 	};
 
@@ -236,7 +235,9 @@ function Model(){
 			var activity = this.removeParkedActivity(oldposition);
 			this.addParkedActivity(activity,newposition);
 		}else if(oldday == null) {
+			//console.log(this.parkedActivities[oldposition]);
 			var activity = this.removeParkedActivity(oldposition);
+			console.log(activity);
 			this.days[newday]._addActivity(activity,newposition);
 		}else if(newday == null) {
 			var activity = this.days[oldday]._removeActivity(oldposition);
