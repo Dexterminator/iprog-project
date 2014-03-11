@@ -6,6 +6,8 @@ $(function() {
 	//Instantiate the views
 	var agendaViews = [];
 	var dayNo = 0;
+	var newAgendaView = document.getElementById("agendaView").cloneNode(true);
+
 	var agendaView = new AgendaView($("#agendaView"), model, dayNo);
 	var agendaViewController = new AgendaViewController(agendaView, model, dayNo);
 	agendaViews.push(agendaView);
@@ -20,8 +22,14 @@ $(function() {
 	var addActivitiesViewController = new AddActivitiesViewController(addActivitiesView, model);
 
 	window.addDay = function(){
-		// dayNo++;
-		var agendaView = new AgendaView($("#agendaView"), model, dayNo);
+		dayNo++;
+		model.addDay();
+		newAgendaView.id = "agendaView" + dayNo;
+		before = document.getElementById("addDayView");
+		container = document.getElementById("containerRow");
+		container.insertBefore(newAgendaView,before);
+
+		var agendaView = new AgendaView($("#agendaView" + dayNo), model, dayNo);
 		var agendaViewController = new AgendaViewController(agendaView, model);
 		agendaViews.push(agendaView);
 		//Test if the day was added by alerting end time of each day

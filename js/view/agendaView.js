@@ -6,6 +6,8 @@ var AgendaView = function (container,model,dayNo) {
 	this.totalLength = container.find('#total-length');
 	this.agendaList = container.find('#agendaList');
 
+	console.log(dayNo);
+
 	this.agendaColumn = container.find("#agenda-column");
 
 	var actRow;
