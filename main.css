@@ -9,6 +9,10 @@ li{
 	cursor: move;
 }
 
+.background-image {
+	background: url('images/ravenna.png') repeat center center fixed;
+}
+
 .no-display {
 	display:none;
 }
@@ -31,6 +35,7 @@ li{
 	height: 838px;
 	border: dashed 3px grey;
 	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.6);
 }
 
 #agenda-column {
@@ -39,6 +44,7 @@ li{
 	height: 773px;
 	border: dashed 3px grey;
 	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.6);
 }
 
 .agenda-header {
