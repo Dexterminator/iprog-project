@@ -72,7 +72,7 @@ function Day(startH,startM) {
 	this._activities = [];
 
 	// sets the start time to new value
-	this.setStart = function(startH,startM) {
+	this.setStart = function(startH,startM,model) {
 		this._start = startH * 60 + startM;
 		model.notifyObservers();
 	}
@@ -235,9 +235,7 @@ function Model(){
 			var activity = this.removeParkedActivity(oldposition);
 			this.addParkedActivity(activity,newposition);
 		}else if(oldday == null) {
-			//console.log(this.parkedActivities[oldposition]);
 			var activity = this.removeParkedActivity(oldposition);
-			console.log(activity);
 			this.days[newday]._addActivity(activity,newposition);
 		}else if(newday == null) {
 			var activity = this.days[oldday]._removeActivity(oldposition);
