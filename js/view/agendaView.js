@@ -1,5 +1,6 @@
 //ExampleView Object constructor
 var AgendaView = function (container,model,dayNo) {
+	this.dayNo = dayNo;
 	this.startTime = container.find('#start-time');
 	this.endTime = container.find('#end-time');
 	this.totalLength = container.find('#total-length');

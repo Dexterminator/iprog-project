@@ -24,18 +24,19 @@ var AgendaViewController = function (view, model) {
 			var listItem = document.getElementById(ui.item.attr('id'));
 			var newDay;
 			var newPosition;
-			if(listItem.nextSibling == null){
+			if(listItem.nextSibling == null && listItem.previousSibling == null){
+				newDay = view.dayNo;
+				newPosition = 0;
+			}else if(listItem.nextSibling == null){
 				var newSplitted = listItem.previousSibling.getAttribute('id').split("-");
 				newDay = newSplitted[0];
 				newPosition = parseInt(newSplitted[1]) + 1;
-			} else {
+			}else {
 				var newSplitted = listItem.nextSibling.getAttribute('id').split("-");
 				newDay = newSplitted[0];
 				newPosition = newSplitted[1];
 			}
 
-			console.log(dayNo + ": " + position);
-			console.log(newDay + ": " + newPosition);
 			model.moveActivity(dayNo, position, newDay, newPosition);
 		}
 	}).disableSelection();

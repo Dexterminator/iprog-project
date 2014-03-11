@@ -235,9 +235,7 @@ function Model(){
 			var activity = this.removeParkedActivity(oldposition);
 			this.addParkedActivity(activity,newposition);
 		}else if(oldday == null) {
-			//console.log(this.parkedActivities[oldposition]);
 			var activity = this.removeParkedActivity(oldposition);
-			console.log(activity);
 			this.days[newday]._addActivity(activity,newposition);
 		}else if(newday == null) {
 			var activity = this.days[oldday]._removeActivity(oldposition);
