@@ -9,6 +9,34 @@ var AgendaViewController = function (view, model) {
 	});
 
 	view.agendaList.sortable({
+  		stop: function( event, ui ) {
+  			var splitted = ui.item.attr('id').split("-");
+  			if(splitted[0] == view.dayNo){
+  				var listItem = document.getElementById(ui.item.attr('id'));
+				var newDay;
+				var newPosition;
+
+				if(listItem != null){
+					if(listItem.nextSibling == null && listItem.previousSibling == null){
+						newDay = view.dayNo;
+						newPosition = 0;
+					}else if(listItem.nextSibling == null){
+						var newSplitted = listItem.previousSibling.getAttribute('id').split("-");
+						newDay = newSplitted[0];
+						newPosition = parseInt(newSplitted[1]) + 1;
+					}else {
+						var newSplitted = listItem.nextSibling.getAttribute('id').split("-");
+						newDay = newSplitted[0];
+						newPosition = newSplitted[1];
+					}
+					model.moveActivity(splitted[0], splitted[1], newDay, newPosition);
+					console.log("Moved in list");
+				}
+  			}
+  		}
+	});
+
+	view.agendaList.sortable({
 		connectWith: ".connectedSortable",
 		revert: 300,
 		receive: function(event, ui) {
@@ -38,6 +66,7 @@ var AgendaViewController = function (view, model) {
 			}
 
 			model.moveActivity(dayNo, position, newDay, newPosition);
+			console.log("Moved between days");
 		}
 	}).disableSelection();
 }
