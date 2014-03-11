@@ -9,7 +9,7 @@ var AgendaView = function (container,model,dayNo) {
 
 	var actRow;
 
-	this.startTime.html(model.days[dayNo].getStart());
+	this.startTime.val(model.days[dayNo].getStart());
 	this.endTime.html(model.days[dayNo].getEnd());
 	this.totalLength.html(model.days[dayNo].getTotalLength());
 
