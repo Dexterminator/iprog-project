@@ -20,10 +20,11 @@ $(function() {
 	var addActivitiesViewController = new AddActivitiesViewController(addActivitiesView, model);
 
 	window.addDay = function(){
+		// dayNo++;
 		var agendaView = new AgendaView($("#agendaView"), model, dayNo);
 		var agendaViewController = new AgendaViewController(agendaView, model);
 		agendaViews.push(agendaView);
-		//Test if the day was added by alterting end time of each day
+		//Test if the day was added by alerting end time of each day
 		for (index = 0; index < agendaViews.length; ++index) {
 			alert(agendaViews[index].endTime.html());
 		}
