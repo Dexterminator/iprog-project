@@ -82,32 +82,33 @@ li{
 }
 
 .activity-presentation {
-	border: 2px solid blue;
+	border: 2px solid lightgrey;
 	padding: 5px;
-	background: lightblue;
+	background: #5E9FA3;
 	border-radius: 5px;
 }
 
 .activity-discussion {
-	border: 2px solid green;
+	border: 2px solid lightgrey;
 	padding: 4px;
-	background: lightgreen;
+	background: #FAB87F;
 	border-radius: 5px;
 }
 
 .activity-groupwork {
-	border: 2px solid red;
+	border: 2px solid lightgrey;
 	padding: 4px;
-	background: orange;
+	background: #F87E7B;
 	border-radius: 5px;
 }
 
 .activity-break {
-	border: 2px solid orange;
+	border: 2px solid lightgrey;
 	padding: 4px;
-	background: yellow;
+	background: #B05574;
 	border-radius: 5px;
 }
+
 .activity-presentation:hover {
 	color: white;
 }
