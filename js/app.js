@@ -7,7 +7,7 @@ $(function() {
 	var agendaViews = [];
 	var dayNo = 0;
 	var agendaView = new AgendaView($("#agendaView"), model, dayNo);
-	var agendaViewController = new AgendaViewController(agendaView, model);
+	var agendaViewController = new AgendaViewController(agendaView, model, dayNo);
 	agendaViews.push(agendaView);
 
 	var formView = new FormView($("#formView"), model);
