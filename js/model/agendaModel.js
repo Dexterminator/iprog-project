@@ -272,10 +272,10 @@ function Model(){
 function createTestData(model){
 	model.addDay();
 	model.addActivity(new Activity("Introduction",8,"Presentation",""),0);
-	//model.addActivity(new Activity("Idea 1",30,"Presentation",""),0);
-	//model.addActivity(new Activity("Working in groups",35,"Group Work",""),0);
-	//model.addActivity(new Activity("Idea 1 discussion",15,"Discussion",""),0);
-	//model.addActivity(new Activity("Coffee break",20,"Break",""),0);
+	model.addActivity(new Activity("Idea 1",30,"Presentation",""),0);
+	model.addActivity(new Activity("Working in groups",35,"Group Work",""),0);
+	model.addActivity(new Activity("Idea 1 discussion",15,"Discussion",""),0);
+	model.addActivity(new Activity("Coffee break",20,"Break",""),0);
 
 	model.addParkedActivity(new Activity("Presentation",10,"Presentation",""),0);
 	model.addParkedActivity(new Activity("Discussion",20,"Discussion",""),0);

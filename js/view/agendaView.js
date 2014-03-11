@@ -16,9 +16,24 @@ var AgendaView = function (container,model,dayNo) {
 	//Register an observer to the model
 	model.addObserver(this);
 
+	this.timeString = function(minutes) {
+		var hour = Math.floor(minutes/60);
+		if(hour < 10){
+			hour = "0" + hour;
+		}
+		minutes = minutes % 60;
+		if(minutes < 10){
+			minutes = "0" + minutes;
+		}
+		return hour + ":" + minutes;
+	}
+
 	this.generateActivities = function(){
 		activities = model.getActivitiesOfADay(dayNo);
 
+
+		var currStart = model.days[dayNo].getStart();
+		var currStartMin = model.days[dayNo].getMinStart();
     	for(var i = 0; i < activities.length; i++){
 	    	var actName = activities[i].getName();
 			var actType = activities[i].getTypeId();
@@ -37,7 +52,8 @@ var AgendaView = function (container,model,dayNo) {
 			actRow = $("<div>").addClass("row");
 
 			actTimeCol = $("<div>").addClass("col-md-3 col-md-offset-1");
-			act = $("<div>").addClass("activity-time").html(actLength + " min");
+
+			act = $("<div>").addClass("activity-time").html(currStart);
 			actTimeCol.append(act);
 
 			actNameCol = $("<div>").addClass("col-md-8");
@@ -49,6 +65,9 @@ var AgendaView = function (container,model,dayNo) {
 			var li = $("<li>");
 			li.html(actRow);
 			this.agendaList.append(li);
+
+			currStartMin += actLength;
+			currStart = this.timeString(currStartMin);
     	}
     }
 
