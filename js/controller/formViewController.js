@@ -1,7 +1,7 @@
 // Constructor for formViewController objects
 var FormViewController = function (view, model){
 	view.formSubmitSave.click(function() {
-		var act = new Activity(view.formInputName.val(),view.formInputLength.val(),view.formInputType.val(),view.formInputDesc.val());
+		var act = new Activity(view.formInputName.val(),parseInt(view.formInputLength.val()),view.formInputType.val(),view.formInputDesc.val());
 		view.formInputName.val("");
 		view.formInputLength.val("");
 		view.formInputDesc.val("");
@@ -13,5 +13,4 @@ var FormViewController = function (view, model){
 	view.formSubmitCancel.click(function() {
 		window.showAgendas();
 	});
-
 }
