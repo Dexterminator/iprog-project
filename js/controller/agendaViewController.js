@@ -13,6 +13,10 @@ var AgendaViewController = function (view, model, dayNo) {
 		}
 	});
 
+	view.startTime.blur(function() {
+		view.startTime.val(model.days[dayNo].getStart());
+	});
+
 	view.startTime.submit(function() {
 		return false;
 	});
