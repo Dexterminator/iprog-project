@@ -1,16 +1,25 @@
 // Constructor for formViewController objects
 var FormViewController = function (view, model){
 	view.formSubmitSave.click(function() {
-		var act = new Activity(view.formInputName.val(),parseInt(view.formInputLength.val()),view.formInputType.val(),view.formInputDesc.val());
-		view.formInputName.val("");
-		view.formInputLength.val("");
-		view.formInputDesc.val("");
-		model.addParkedActivity(act);
+		// Makes sure user inputs correct values
+		if(view.formInputName.val() == "" || view.formInputLength.val() == ""  || view.formInputDesc.val() == ""){
+			alert("You must enter all values.")
+		} else {
+			var act = new Activity(view.formInputName.val(),parseInt(view.formInputLength.val()),view.formInputType.val(),view.formInputDesc.val());
+			view.formInputName.val("");
+			view.formInputLength.val("");
+			view.formInputDesc.val("");
+			model.addParkedActivity(act);
 
-		window.showAgendas();
+			window.hideForm();
+		}
 	});
 
 	view.formSubmitCancel.click(function() {
-		window.showAgendas();
+		window.hideForm();
+	});
+
+	view.formXButton.click(function() {
+		window.hideForm();
 	});
 }

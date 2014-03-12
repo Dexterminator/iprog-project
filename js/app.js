@@ -38,22 +38,23 @@ $(function() {
 	}
 
 	window.showForm = function(){
-		addActivitiesView.makeHidden();
-		for (i = 0; i < agendaViews.length; ++i) {
-			agendaViews[i].makeHidden();
-		}
-		addDayView.makeHidden();
 		formView.makeVisible();
 	}
 
-	window.showAgendas = function(){
+	window.hideForm = function(){
 		formView.makeHidden();
-		addActivitiesView.makeVisible();
-		for (i = 0; i < agendaViews.length; ++i) {
-			agendaViews[i].makeVisible();
-		}
-		addDayView.makeVisible();
 	}
+
+	// TODO: I don't think showAgendas() is necessary anymore
+
+	// window.showAgendas = function(){
+	// 	formView.makeHidden();
+	// 	addActivitiesView.makeVisible();
+	// 	for (i = 0; i < agendaViews.length; ++i) {
+	// 		agendaViews[i].makeVisible();
+	// 	}
+	// 	addDayView.makeVisible();
+	// }
 
 	//This is where all navigation logic will go.
 

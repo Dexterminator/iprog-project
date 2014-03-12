@@ -17,7 +17,7 @@
                 <h1>The Agenda Planner</h1>
             </div>
         </div>
-               
+
         <div id="containerRow" class="row">
             <!-- addActivitiesView -->
             <div id="addActivitiesView">
@@ -28,10 +28,10 @@
                     <div class="row">
                         <div id="addActivitiesColumn" class="activity-column">
                             <ul id="parkedActivitiesList" class="connectedSortable"></ul>
-                             <!-- DYNAMIC CONTENT GOES HERE -->
+                            <!-- DYNAMIC CONTENT GOES HERE -->
                         </div>
-                            
-                       
+
+
                     </div>
                 </div> 
             </div><!-- End of addActivitiesView -->
@@ -66,26 +66,42 @@
                      </button>
                  </div>                
              </div> 
-            </div><!-- End of addDayView --> 
+         </div><!-- End of addDayView --> 
          <!-- formView -->
-         <div id = "formView" class = "no-display form-container">
-            <div class="col-md-3">
-                <input type="text" class="form-control" id="formInputName" placeholder="Name">
-                <input type="text" class="form-control" id="formInputLength" placeholder="Length (min)">
-                <div class="form-group">
-                    <label for="formInputType">Type</label>
-                    <!-- This select will be populated -->
-                    <select class="form-control" id="formInputType"></select>
+         <div class="modal" id="formView">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" id="formXButton" aria-hidden="true">×</button>
+                      <h4 class="modal-title">New Activity</h4>
+                  </div>
+                  <div class="container">
+
+                  </div>
+                  <div class="modal-body">
+
+                      <input type="text" class="form-control" id="formInputName" placeholder="Name">
+                      <input type="text" class="form-control" id="formInputLength" placeholder="Length (min)">
+                      <div class="form-group">
+                        <label for="formInputType">Type</label>
+                        <!-- This select will be populated -->
+                        <select class="form-control" id="formInputType"></select>
+                    </div>
+                    <textarea class="form-control" rows="5" placeholder="Description" id="formInputDesc"></textarea>
                 </div>
-                <textarea class="form-control" rows="5" placeholder="Description" id="formInputDesc"></textarea>
-                <button class="btn btn-danger" id="formSubmitCancel">Cancel</button>
-                <button class="btn btn-success" id="formSubmitSave">Save</button>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" id="formSubmitCancel">Cancel</button>
+                    <button class="btn btn-success" id="formSubmitSave">Save</button>
+                </div>
 
 
 
-            </div> 
-        </div> <!-- End of formView-->
-    </div> <!-- End of row-->
+
+            </div> <!-- End of formView-->
+
+        </div>
+    </div>
+</div> <!-- End of row-->
 </div>
 </body>
 

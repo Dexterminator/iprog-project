@@ -7,6 +7,7 @@ var FormView = function (container, model){
 	this.formInputDesc = container.find("#formInputDesc");
 	this.formSubmitCancel = container.find("#formSubmitCancel");
 	this.formSubmitSave = container.find("#formSubmitSave");
+	this.formXButton = container.find("#formXButton");
 
 
 	//Populate select field
