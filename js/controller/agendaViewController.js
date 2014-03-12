@@ -13,12 +13,17 @@ var AgendaViewController = function (view, model, dayNo) {
 		}
 	});
 
-	view.startTime.blur(function() {
-		view.startTime.val(model.days[dayNo].getStart());
+	//Prevent the page from being reloaded when the user presses the return key
+	view.startTime.keypress(function(event) {
+		if (event.keyCode == 13) {
+			event.preventDefault();
+			return false;
+		};
 	});
 
-	view.startTime.submit(function() {
-		return false;
+	//Show the latest valid time when the field loses focus
+	view.startTime.blur(function() {
+		view.startTime.val(model.days[dayNo].getStart());
 	});
 
 	view.agendaList.sortable({
