@@ -2,14 +2,13 @@ var AgendaViewController = function (view, model, dayNo) {
 	//Make it possible to drop items in the column, and update the model accordingly
 	view.startTime.keyup(function() {
 		var timeInput = view.startTime.val();
-		if(/([01]\d|2[0-3]):?[0-5]\d/.test(timeInput)){
+		if(/([01]\d|2[0-3])[:\.]?[0-5]\d/.test(timeInput)){
 			console.log("Hej");
-			timeInput = timeInput.replace(':', '');
+			timeInput = timeInput.replace(/[:\.]/, '');
+			// timeInput = timeInput.replace('.', '');
 			var hours = timeInput.slice(0,2);
 			var minutes = timeInput.slice(2, 4);
 			model.days[dayNo].setStart(parseInt(hours), parseInt(minutes), model);
-		}else {
-			console.log("neeej");
 		}
 	});
 
@@ -85,6 +84,12 @@ var AgendaViewController = function (view, model, dayNo) {
 			}
 
 			model.moveActivity(dayNo, position, newDay, newPosition);
+			console.log(model.days[newDay].getMinEnd());
+
+			if (model.days[newDay].getMinEnd() > 1439) {
+				model.moveActivity(newDay, newPosition, dayNo, position);				
+				alert("End time exceeds 23:59.");
+			};
 		}
 	}).disableSelection();
 }

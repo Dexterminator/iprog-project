@@ -120,6 +120,10 @@ function Day(startH,startM) {
 	this.getMinStart = function(){
 		return this._start;
 	}
+
+	this.getMinEnd = function(){
+		return this._start + this.getTotalLength();
+	}
 	
 	// returns the length (in minutes) of activities of certain type
 	this.getLengthByType = function (typeid) {
