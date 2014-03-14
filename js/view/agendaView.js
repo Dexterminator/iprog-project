@@ -101,17 +101,18 @@ var AgendaView = function (container,model,dayNo) {
     		}
     		css = css + "#FAB87F, #FAB87F "+(discRatio+presRatio)+"%"
     	}
+
+    	if(breakRatio != 0){
+    		if(presRatio != 0 || discRatio != 0 || groupRatio != 0){
+    			css = css + ", ";
+    		}
+    		css = css + "#B05574, #B05574 "+(discRatio+presRatio+breakRatio)+"%"
+    	}
     	if(groupRatio != 0){
     		if(presRatio != 0 || discRatio != 0){
     			css = css + ", ";
     		}
     		css = css + "#F87E7B, #F87E7B "+(groupRatio+discRatio+presRatio)+"%"
-    	}
-    	if(breakRatio != 0){
-    		if(presRatio != 0 || discRatio != 0 || groupRatio != 0){
-    			css = css + ", ";
-    		}
-    		css = css + "#B05574, #B05574 "+(groupRatio+discRatio+presRatio+breakRatio)+"%"
     	}
     	console.log(presRatio);
     	this.ratioBox
