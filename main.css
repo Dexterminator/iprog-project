@@ -129,7 +129,11 @@ li{
 }
 
 .modal{
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.6);
+}
+
+.modal .modal-dialog{
+	margin-top: 10%;
 }
 
 .activity-break:hover {
