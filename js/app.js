@@ -37,13 +37,19 @@ $(function() {
 		//Test if the day was added by alerting end time of each day
 	}
 
-	window.showForm = function(){
-		formView.makeVisible();
+	//This is where all navigation logic will go.
+	window.showForm = function(activity){
+		formView.makeVisible(activity);
 	}
 
 	window.hideForm = function(){
 		formView.makeHidden();
 	}
+
+	window.updateController = function() {
+		addActivitiesViewController.updateClicks();
+	}
+
 
 	// TODO: I don't think showAgendas() is necessary anymore
 
@@ -56,6 +62,5 @@ $(function() {
 	// 	addDayView.makeVisible();
 	// }
 
-	//This is where all navigation logic will go.
 
 });

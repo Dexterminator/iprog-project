@@ -1,6 +1,7 @@
 // formView object constructor
 var FormView = function (container, model){
 	//Load objects from view
+	this.activityForm = container.find("#activityForm");
 	this.formInputName = container.find("#formInputName");
 	this.formInputLength = container.find("#formInputLength");
 	this.formInputType = container.find("#formInputType");
@@ -12,7 +13,6 @@ var FormView = function (container, model){
 
 	//Populate select field
 	types = model.getAllTypes();
-	console.log(types);
 	for(var i = 0; i<types.length; i++){
 		var opt = $("<option>");
 		opt.attr("value", types[i]);
@@ -26,7 +26,14 @@ var FormView = function (container, model){
 		});
 	}
 
-	this.makeVisible = function(){
+	this.makeVisible = function(activity){
+		// If called with an activity, populate fields
+		if(activity != null){
+			this.formInputName.val(activity.getName());
+			this.formInputLength.val(activity.getLength());
+			this.formInputType.val(activity.getType());
+			this.formInputDesc.val(activity.getDescription());
+		}
 		container.fadeIn(100, function() {
 			//Animation complete
 		});

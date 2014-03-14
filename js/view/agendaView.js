@@ -5,6 +5,7 @@ var AgendaView = function (container,model,dayNo) {
 	this.endTime = container.find('#end-time');
 	this.totalLength = container.find('#total-length');
 	this.agendaList = container.find('#agendaList');
+	this.ratioBox = container.find('#ratioBox');
 
 	this.agendaList.html("");
 
@@ -36,22 +37,32 @@ var AgendaView = function (container,model,dayNo) {
 
 		var currStart = model.days[dayNo].getStart();
 		var currStartMin = model.days[dayNo].getMinStart();
+		// Counters to keep track of ratio
+		var breaks = 0;
+		var presentations = 0;
+		var groupWorks = 0;
+		var discussions = 0;
     	for(var i = 0; i < activities.length; i++){
 	    	var actName = activities[i].getName();
 			var actType = activities[i].getTypeId();
 			var actLength = activities[i].getLength();
 
+			// Set correct activity type and increment counters
 			if (actType == "Presentation") {
 				actType = "activity-presentation";
+				presentations += actLength;
 			} else if (actType == "Group Work") {
 				actType = "activity-groupwork"
+				groupWorks += actLength;
 			} else if (actType == "Discussion") {
 				actType = "activity-discussion";
+				discussions += actLength;
 			} else if (actType == "Break") {
 				actType = "activity-break";
+				breaks += actLength;
 			}
 
-			actRow = $("<div>").addClass("row");
+			actRow = $("<div>").addClass("row activity activity-"+i);
 
 			actTimeCol = $("<div>").addClass("col-md-3 col-md-offset-1");
 
@@ -72,6 +83,40 @@ var AgendaView = function (container,model,dayNo) {
 			currStartMin += actLength;
 			currStart = this.timeString(currStartMin);
     	}
+    	// Calculate ratios in percent
+    	var dayLength = model.days[dayNo].getTotalLength();
+    	var presRatio = parseFloat(presentations / dayLength) * 100;
+    	var groupRatio = parseFloat(groupWorks / dayLength) * 100;
+    	var discRatio = parseFloat(discussions / dayLength) * 100;
+    	var breakRatio = parseFloat(breaks / dayLength) * 100;
+    	// Show the ratios of activities in ratio box using the attr function as css() overrides itself 
+    	//when called multiple times or with multiple values for same property
+    	var css = "";
+    	if(presRatio != 0){
+    		css = css + "#5E9FA3, #5E9FA3 "+presRatio+"%, #5E9FA3"
+    	}
+    	if(discRatio != 0){
+    		if(presRatio != 0){
+    			css = css + ", ";
+    		}
+    		css = css + "#FAB87F, #FAB87F "+(discRatio+presRatio)+"%, #FAB87F"
+    	}
+    	if(groupRatio != 0){
+    		if(presRatio != 0 || discRatio != 0){
+    			css = css + ", ";
+    		}
+    		css = css + "#F87E7B, #F87E7B "+(groupRatio+discRatio+presRatio)+"%, #F87E7B"
+    	}
+    	if(breakRatio != 0){
+    		if(presRatio != 0 || discRatio != 0 || groupRatio != 0){
+    			css = css + ", ";
+    		}
+    		css = css + "#B05574, #B05574 "+(groupRatio+discRatio+presRatio+breakRatio)+"%, #B05574"
+    	}
+    	this.ratioBox
+    		.attr('style', "background-image: -webkit-linear-gradient(top, "+css+");"+
+    			"background-image: -moz-linear-gradient(top, "+css+")");
+
     }
 
     this.generateActivities();

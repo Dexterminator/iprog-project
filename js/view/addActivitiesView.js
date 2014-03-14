@@ -1,4 +1,4 @@
-var AddActivitiesView = function (container,model) {
+var AddActivitiesView = function (container, model) {
 	this.addActivityButton = container.find("#addActivityButton");
 	this.addActivitiesColumn = container.find("#addActivitiesColumn");
 	this.parkedActivitiesList = container.find("#parkedActivitiesList");
@@ -25,7 +25,7 @@ var AddActivitiesView = function (container,model) {
 			}
 
 	        var li = $("<li>");
-			actRow = $("<div>").addClass("row");
+			actRow = $("<div>").addClass("row activity activity-"+i);
 			actLenCol = $("<div>").addClass("col-md-4 col-md-offset-1");
 			actLenDisplay = $("<div>").addClass("activity-time").html(actLength + " min");
 
@@ -52,6 +52,8 @@ var AddActivitiesView = function (container,model) {
 		}
 		
 		this.generateParkedActivitiesHTML();
+		// New activity may have been added, must update controller accordingly
+		window.updateController();
 	}
 
 	this.makeHidden = function(){

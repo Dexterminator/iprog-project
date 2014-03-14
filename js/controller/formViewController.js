@@ -13,15 +13,21 @@ var FormViewController = function (view, model){
 			view.formInputDesc.val("");
 			model.addParkedActivity(act);
 
+			// Reset and hide form
+			view.activityForm[0].reset();
 			window.hideForm();
 		}
 	});
 
 	view.formSubmitCancel.click(function() {
+		// Reset and hide form
+		view.activityForm[0].reset();
 		window.hideForm();
 	});
 
 	view.formXButton.click(function() {
+		// Exactly as the cancel button, reset and hide form
+		view.activityForm[0].reset();
 		window.hideForm();
 	});
 }
