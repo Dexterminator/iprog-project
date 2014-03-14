@@ -93,26 +93,27 @@ var AgendaView = function (container,model,dayNo) {
     	//when called multiple times or with multiple values for same property
     	var css = "";
     	if(presRatio != 0){
-    		css = css + "#5E9FA3, #5E9FA3 "+presRatio+"%, #5E9FA3"
+    		css = css + "#5E9FA3, #5E9FA3 "+presRatio+"%"
     	}
     	if(discRatio != 0){
     		if(presRatio != 0){
     			css = css + ", ";
     		}
-    		css = css + "#FAB87F, #FAB87F "+(discRatio+presRatio)+"%, #FAB87F"
+    		css = css + "#FAB87F, #FAB87F "+(discRatio+presRatio)+"%"
     	}
     	if(groupRatio != 0){
     		if(presRatio != 0 || discRatio != 0){
     			css = css + ", ";
     		}
-    		css = css + "#F87E7B, #F87E7B "+(groupRatio+discRatio+presRatio)+"%, #F87E7B"
+    		css = css + "#F87E7B, #F87E7B "+(groupRatio+discRatio+presRatio)+"%"
     	}
     	if(breakRatio != 0){
     		if(presRatio != 0 || discRatio != 0 || groupRatio != 0){
     			css = css + ", ";
     		}
-    		css = css + "#B05574, #B05574 "+(groupRatio+discRatio+presRatio+breakRatio)+"%, #B05574"
+    		css = css + "#B05574, #B05574 "+(groupRatio+discRatio+presRatio+breakRatio)+"%"
     	}
+    	console.log(presRatio);
     	this.ratioBox
     		.attr('style', "background-image: -webkit-linear-gradient(top, "+css+");"+
     			"background-image: -moz-linear-gradient(top, "+css+")");
