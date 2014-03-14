@@ -31,7 +31,7 @@ var FormView = function (container, model){
 		if(activity != null){
 			this.formInputName.val(activity.getName());
 			this.formInputLength.val(activity.getLength());
-			this.formInputType.val(activity.getType());
+			this.formInputType.val(activity.getTypeId());
 			this.formInputDesc.val(activity.getDescription());
 		}
 		container.fadeIn(100, function() {
