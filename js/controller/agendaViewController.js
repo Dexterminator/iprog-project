@@ -32,13 +32,13 @@ var AgendaViewController = function (view, model, dayNo) {
 			var index = i;
 			$(".activity-"+i).click({activity:activities[i]}, activityClick);
 		}
-		//Show the latest valid time when the field loses focus
-		view.startTime.blur(function() {
-			view.startTime.val(model.days[dayNo].getStart());
-		});
 	}
 	// Generate onClicks for activities
 	setOnClick();
+	//Show the latest valid time when the field loses focus
+	view.startTime.blur(function() {
+		view.startTime.val(model.days[dayNo].getStart());
+	});
 
 	view.agendaList.sortable({
   		stop: function( event, ui ) {
