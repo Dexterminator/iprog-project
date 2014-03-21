@@ -113,7 +113,7 @@ var AgendaView = function (container,model,dayNo) {
     		css = css + "#B05574 "+(discRatio+presRatio)+"%, #B05574 "+(discRatio+presRatio+breakRatio)+"%"
     	}
     	if(groupRatio != 0){
-    		if(presRatio != 0 || discRatio != 0 || breakRation != 0){
+    		if(presRatio != 0 || discRatio != 0 || breakRatio != 0){
     			css = css + ", ";
     		}
     		css = css + "#F87E7B "+(discRatio+presRatio+breakRatio)+"%, #F87E7B "+(groupRatio+discRatio+presRatio+breakRatio)+"%"
