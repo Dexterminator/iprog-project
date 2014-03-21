@@ -9,16 +9,22 @@ var FormView = function (container, model){
 	this.formSubmitCancel = container.find("#formSubmitCancel");
 	this.formSubmitSave = container.find("#formSubmitSave");
 	this.formXButton = container.find("#formXButton");
+	this.formInputTypeText = container.find("#formInputTypeText");
 
-
+	//Register as observer
+	model.addObserver(this);
 	//Populate select field
-	types = model.getAllTypes();
-	for(var i = 0; i<types.length; i++){
-		var opt = $("<option>");
-		opt.attr("value", types[i]);
-		opt.html(types[i]);
-		this.formInputType.append(opt);
+	this.populateSelectField = function(){
+		this.formInputType.html("");
+		types = model.getAllTypes();
+		for(var i = 0; i<types.length; i++){
+			var opt = $("<option>");
+			opt.attr("value", types[i]);
+			opt.html(types[i]);
+			this.formInputType.append(opt);
+		}
 	}
+	this.populateSelectField();
 
 	this.makeHidden = function(){
 		container.fadeOut(0, function() {
@@ -39,7 +45,9 @@ var FormView = function (container, model){
 		});
 	}
 
-
-	//No need for observer pattern
+	this.update = function(arg){
+		// Populate select field again, a new activity may have been added.
+		this.populateSelectField();
+	}
 
 }

@@ -182,6 +182,12 @@ function Model(){
 	this.getAllTypes = function() {
 		return ActivityType;
 	}
+
+	// This method adds a type to the list, making it accessible in the future
+	this.addType = function(typeName) {
+		ActivityType.push(typeName);
+	}
+	
 	// adds a new day. if startH and startM (start hours and minutes)
 	// are not provided it will set the default start of the day to 08:00
 	this.addDay = function (startH,startM) {

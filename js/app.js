@@ -27,7 +27,7 @@ $(function() {
 		
 		var newAgendaView = document.getElementById("agendaView").cloneNode(true);
 		newAgendaView.id = "agendaView" + dayNo;
-		var before = document.getElementById("addDayView");
+		var before = document.getElementById("placeholder");
 		var container = document.getElementById("containerRow");
 		container.insertBefore(newAgendaView,before);
 

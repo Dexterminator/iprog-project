@@ -25,9 +25,6 @@ li{
 	background-color: #6B526A;
 }
 
-.button-centered {
-	margin-top: 40%;
-}
 
 .column-1 {
 	margin-right: 7px;
@@ -38,8 +35,13 @@ li{
 }
 
 .addActivity-button {
+	margin-top: 2%;
+}
+
+.addDay-button {
 	margin-top: 5%;
 }
+
 
 .activity-column {
 	padding: 10px;
@@ -53,6 +55,7 @@ li{
 #agenda-column {
 	padding: 10px;
 	margin-top: 2%;
+	margin-left: 2%;
 	height: 773px;
 	border: dashed 3px grey;
 	border-radius: 20px;
@@ -109,6 +112,13 @@ li{
 	border-radius: 5px;
 }
 
+.activity-custom {
+	border: 2px solid lightgrey;
+	padding: 4px;
+	background: #4096EE;
+	border-radius: 5px;
+}
+
 .activity-presentation:hover {
 	color: white;
 }
@@ -118,6 +128,10 @@ li{
 }
 
 .activity-groupwork:hover {
+	color:white;
+}
+
+.activity-custom:hover {
 	color:white;
 }
 
@@ -147,6 +161,6 @@ li{
 	margin-top: 1%;
 }
 
-#addDayView {
-	margin-top: 30%;
+.addDayAndActivityContainer {
+	margin-right: 2%;
 }

@@ -22,6 +22,8 @@ var AddActivitiesView = function (container, model) {
 				actType = "activity-discussion";
 			} else if (actType == "Break") {
 				actType = "activity-break";
+			} else {
+				actType = "activity-custom";
 			}
 
 	        var li = $("<li>");

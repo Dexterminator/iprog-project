@@ -42,6 +42,7 @@ var AgendaView = function (container,model,dayNo) {
 		var presentations = 0;
 		var groupWorks = 0;
 		var discussions = 0;
+		var customs = 0;
     	for(var i = 0; i < activities.length; i++){
 	    	var actName = activities[i].getName();
 			var actType = activities[i].getTypeId();
@@ -60,8 +61,10 @@ var AgendaView = function (container,model,dayNo) {
 			} else if (actType == "Break") {
 				actType = "activity-break";
 				breaks += actLength;
+			} else {
+				actType = "activity-custom";
+				customs += actLength;
 			}
-
 			actRow = $("<div>").addClass("row activity activity-"+i);
 
 			actTimeCol = $("<div>").addClass("col-md-3 col-md-offset-1");
@@ -89,6 +92,7 @@ var AgendaView = function (container,model,dayNo) {
     	var groupRatio = parseFloat(groupWorks / dayLength) * 100;
     	var discRatio = parseFloat(discussions / dayLength) * 100;
     	var breakRatio = parseFloat(breaks / dayLength) * 100;
+    	var customsRatio = parseFloat(customs / dayLength) * 100;
     	// Show the ratios of activities in ratio box using the attr function as css() overrides itself 
     	//when called multiple times or with multiple values for same property
     	var css = "";
@@ -99,20 +103,26 @@ var AgendaView = function (container,model,dayNo) {
     		if(presRatio != 0){
     			css = css + ", ";
     		}
-    		css = css + "#FAB87F, #FAB87F "+(discRatio+presRatio)+"%"
+    		css = css + "#FAB87F "+presRatio+"%, #FAB87F "+(discRatio+presRatio)+"%"
     	}
 
     	if(breakRatio != 0){
-    		if(presRatio != 0 || discRatio != 0 || groupRatio != 0){
-    			css = css + ", ";
-    		}
-    		css = css + "#B05574, #B05574 "+(discRatio+presRatio+breakRatio)+"%"
-    	}
-    	if(groupRatio != 0){
     		if(presRatio != 0 || discRatio != 0){
     			css = css + ", ";
     		}
-    		css = css + "#F87E7B, #F87E7B "+(groupRatio+discRatio+presRatio)+"%"
+    		css = css + "#B05574 "+(discRatio+presRatio)+"%, #B05574 "+(discRatio+presRatio+breakRatio)+"%"
+    	}
+    	if(groupRatio != 0){
+    		if(presRatio != 0 || discRatio != 0 || breakRation != 0){
+    			css = css + ", ";
+    		}
+    		css = css + "#F87E7B "+(discRatio+presRatio+breakRatio)+"%, #F87E7B "+(groupRatio+discRatio+presRatio+breakRatio)+"%"
+    	}
+    	if(customsRatio != 0){
+    		if(presRatio != 0 || discRatio != 0 || breakRation != 0 || groupRation != 0){
+    			css = css + ", ";
+    		}
+    		css = css + "#4096EE "+(groupRatio+discRatio+presRatio+breakRatio)+"%, #4096EE "+(groupRatio+discRatio+presRatio+customsRatio+breakRatio)+"%"
     	}
     	console.log(presRatio);
     	this.ratioBox

@@ -8,7 +8,6 @@ var AgendaViewController = function (view, model, dayNo) {
 	view.startTime.keyup(function() {
 		var timeInput = view.startTime.val();
 		if(/([01]\d|2[0-3])[:\.]?[0-5]\d/.test(timeInput)){
-			console.log("Hej");
 			timeInput = timeInput.replace(/[:\.]/, '');
 			// timeInput = timeInput.replace('.', '');
 			var hours = timeInput.slice(0,2);
