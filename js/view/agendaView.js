@@ -34,7 +34,6 @@ var AgendaView = function (container,model,dayNo) {
 
 	this.generateActivities = function(){
 		activities = model.getActivitiesOfADay(dayNo);
-
 		var currStart = model.days[dayNo].getStart();
 		var currStartMin = model.days[dayNo].getMinStart();
 		// Counters to keep track of ratio
@@ -125,7 +124,6 @@ var AgendaView = function (container,model,dayNo) {
     		}
     		css = css + "#4096EE "+(groupRatio+discRatio+presRatio+breakRatio)+"%, #4096EE "+(groupRatio+discRatio+presRatio+customsRatio+breakRatio)+"%"
     	}
-    	console.log(presRatio);
     	this.ratioBox
     		.attr('style', "background-image: -webkit-linear-gradient(top, "+css+");"+
     			"background-image: -moz-linear-gradient(top, "+css+")");

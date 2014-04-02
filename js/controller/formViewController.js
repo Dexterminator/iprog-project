@@ -15,11 +15,21 @@ var FormViewController = function (view, model){
 			} else {
 				type = view.formInputType.val();
 			}
-			var act = new Activity(view.formInputName.val(),parseInt(view.formInputLength.val()),type,view.formInputDesc.val());
+			// If it is a new activity being created
+			if(view.editMode == false){
+				var act = new Activity(view.formInputName.val(),parseInt(view.formInputLength.val()),type,view.formInputDesc.val());
+				model.addParkedActivity(act);
+			} else {
+				// If it is an activity being edited
+				view.activity.setName(view.formInputName.val());
+				view.activity.setLength(parseInt(view.formInputLength.val()));
+				view.activity.setTypeId(type);
+				view.activity.setDescription(view.formInputDesc.val());
+			}
+
 			view.formInputName.val("");
 			view.formInputLength.val("");
 			view.formInputDesc.val("");
-			model.addParkedActivity(act);
 
 			// Reset and hide form
 			view.activityForm[0].reset();

@@ -16,7 +16,7 @@ function Activity(name,length,typeid,description){
 	// sets the name of the activity
 	this.setName = function(name) {
 		_name = name;
-		model.notifyObservers();
+		window.model.notifyObservers();
 	}
 
 	// get the name of the activity
@@ -27,7 +27,7 @@ function Activity(name,length,typeid,description){
 	// sets the length of the activity
 	this.setLength = function(length) {
 		_length = length;
-		model.notifyObservers();
+		window.model.notifyObservers();
 	}
 
 	// get the name of the activity
@@ -38,7 +38,7 @@ function Activity(name,length,typeid,description){
 	// sets the typeid of the activity
 	this.setTypeId = function(typeid) {
 		_typeid = typeid;
-		model.notifyObservers();
+		window.model.notifyObservers();
 	}
 
 	// get the type id of the activity
@@ -49,7 +49,7 @@ function Activity(name,length,typeid,description){
 	// sets the description of the activity
 	this.setDescription = function(description) {
 		_description = description;
-		model.notifyObservers();
+		window.model.notifyObservers();
 	}
 
 	// get the description of the activity
@@ -274,7 +274,7 @@ function Model(){
 
 // this is the instance of our main model
 // this is what you should use in your application
-// var model = new Model();
+//var model = new Model();
 
 
 // you can use this method to create some test data and test your implementation

@@ -2,6 +2,7 @@ $(function() {
 	//Create test data for
 
 	var model = new Model();
+	window.model = model;
 	createTestData(model);
 	//Instantiate the views
 	var agendaViews = [];
