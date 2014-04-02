@@ -38,6 +38,7 @@ var AddActivitiesView = function (container, model) {
 			actTypeCol.append(actDisplay);
 			actRow.append(actLenCol);
 			actRow.append(actTypeCol);
+			var activityController = new ActivityController(actRow, model, null, i);
 			
 			li.html(actRow);
 			li.attr('id', 'null' + "-" + i);
@@ -54,8 +55,6 @@ var AddActivitiesView = function (container, model) {
 		}
 		
 		this.generateParkedActivitiesHTML();
-		// New activity may have been added, must update controller accordingly
-		window.updateController();
 	}
 
 	this.makeHidden = function(){

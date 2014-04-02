@@ -45,22 +45,4 @@ $(function() {
 	window.hideForm = function(){
 		formView.makeHidden();
 	}
-
-	window.updateController = function() {
-		addActivitiesViewController.updateClicks();
-	}
-
-
-	// TODO: I don't think showAgendas() is necessary anymore
-
-	// window.showAgendas = function(){
-	// 	formView.makeHidden();
-	// 	addActivitiesView.makeVisible();
-	// 	for (i = 0; i < agendaViews.length; ++i) {
-	// 		agendaViews[i].makeVisible();
-	// 	}
-	// 	addDayView.makeVisible();
-	// }
-
-
 });

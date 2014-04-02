@@ -24,16 +24,7 @@ var AgendaViewController = function (view, model, dayNo) {
 			return false;
 		};
 	});
-	// Set the onClick of every activity to show the form with the values entered
-	function setOnClick() {
-		var activities = model.getActivitiesOfADay(dayNo);
-		for(var i = 0; i< $(".activity").length; i++){
-			var index = i;
-			$(".activity-"+i).click({activity:activities[i]}, activityClick);
-		}
-	}
-	// Generate onClicks for activities
-	setOnClick();
+
 	//Show the latest valid time when the field loses focus
 	view.startTime.blur(function() {
 		view.startTime.val(model.days[dayNo].getStart());
@@ -61,8 +52,6 @@ var AgendaViewController = function (view, model, dayNo) {
 						newPosition = newSplitted[1];
 					}
 					model.moveActivity(splitted[0], splitted[1], newDay, newPosition);
-					// Regenerate onClicks of activities
-					setOnClick();
 				}
   			}
   		}
@@ -101,8 +90,6 @@ var AgendaViewController = function (view, model, dayNo) {
 
 			model.moveActivity(dayNo, position, newDay, newPosition);
 			console.log(model.days[newDay].getMinEnd());
-			// Regenerate onClicks of activities
-			setOnClick();
 
 			if (model.days[newDay].getMinEnd() > 1439) {
 				model.moveActivity(newDay, newPosition, dayNo, position);				

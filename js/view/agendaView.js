@@ -82,6 +82,7 @@ var AgendaView = function (container,model,dayNo) {
 			li.html(actRow);
 			li.attr('id', dayNo + "-" + i);
 			this.agendaList.append(li);
+			var activityController = new ActivityController(actRow, model, dayNo, i);
 
 			currStartMin += actLength;
 			currStart = this.timeString(currStartMin);
