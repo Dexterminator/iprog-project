@@ -30,6 +30,8 @@ var FormView = function (container, model){
 	this.populateSelectField();
 
 	this.makeHidden = function(){
+		this.editMode = false;
+		this.activity = null;
 		container.fadeOut(0, function() {
 			//Animation complete
 		});
